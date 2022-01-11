@@ -51,3 +51,37 @@ orders['salutation'] = orders.apply(lambda row: \
                                     if row['gender'] == 'male'
                                     else 'Dear Ms. ' + row['last_name'],
                                     axis=1)
+
+## even more examples for lambda and modifying dataframes
+
+import codecademylib3
+import pandas as pd 
+
+inventory = pd.read_csv('inventory.csv')
+
+print(inventory.head(11))
+
+staten_island = inventory.head(11)
+
+print(staten_island)
+
+product_request = staten_island['product_description']
+
+seed_request = inventory.loc[(inventory['location'] == "Brooklyn") & (inventory['product_type'] == "seeds")]
+
+inventory['in_stock'] = inventory.quantity.apply(lambda x: True if x > 0 else False)
+
+
+
+inventory['total_value'] = inventory.price * inventory.quantity
+
+print(inventory)
+
+combine_lambda = lambda row: \
+    '{} - {}'.format(row.product_type,
+                     row.product_description)
+
+inventory['full_description'] = inventory.apply(combine_lambda, axis = 1)
+
+print(inventory)
+
