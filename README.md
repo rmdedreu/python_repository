@@ -85,3 +85,11 @@ inventory['full_description'] = inventory.apply(combine_lambda, axis = 1)
 
 print(inventory)
 
+## Pivot a groupby
+
+print(shoe_counts)
+shoe_counts_pivot = shoe_counts.pivot(
+    columns='shoe_color',
+    index='shoe_type',
+    values='id').reset_index()
+
