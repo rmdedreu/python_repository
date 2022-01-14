@@ -111,3 +111,8 @@ click_source_by_month_pivot = click_source_by_month.pivot( columns='month', inde
 
 print(click_source_by_month_pivot)
 
+## check if null
+
+ad_clicks['is_click'] = ~ad_clicks\
+   .ad_click_timestamp.isnull()
+
