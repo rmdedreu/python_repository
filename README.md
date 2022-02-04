@@ -1,5 +1,5 @@
 # python_repository
-Python rep Reyn
+In this repository I store my python code
 
 
 ## using a lambda function to split a variable and add it to the dataframe
