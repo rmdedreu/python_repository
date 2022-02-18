@@ -194,5 +194,17 @@ print(bperc_pivot)
 
 
 
+## multiple tables in pandas
 
+orders_products = pd.merge(orders, products.rename(columns={'id': 'product_id'}))
+
+pd.merge(
+    orders,
+    customers,
+    left_on='customer_id',
+    right_on='id',
+    suffixes=['_order', '_customer']
+)
+
+store_a_b_outer = pd.merge(store_a, store_b, how='outer')
 
