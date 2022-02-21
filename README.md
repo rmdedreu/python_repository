@@ -208,3 +208,10 @@ pd.merge(
 
 store_a_b_outer = pd.merge(store_a, store_b, how='outer')
 
+
+## mulitple left joins
+
+all_data = visits.merge(cart, how='left')\
+                .merge(checkout, how='left')\
+                .merge(purchase, how='left')
+
