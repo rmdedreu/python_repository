@@ -215,3 +215,21 @@ all_data = visits.merge(cart, how='left')\
                 .merge(checkout, how='left')\
                 .merge(purchase, how='left')
 
+
+## colors and markers in matplotlib 
+
+plt.plot(time, revenue, color='purple', linestyle='--')
+
+plt.plot(time, costs, color='#82edc9', marker='s')
+
+## subplots
+
+# First Subplot
+plt.subplot(1, 2, 1)
+plt.plot(months, temperature, color='green')
+plt.title('First Subplot')
+ 
+# Second Subplot
+plt.subplot(1, 2, 2)
+plt.plot(months, flights_to_hawaii, "o", color='steelblue')
+plt.title('Second Subplot')
