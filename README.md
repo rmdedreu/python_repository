@@ -233,3 +233,20 @@ plt.title('First Subplot')
 plt.subplot(1, 2, 2)
 plt.plot(months, flights_to_hawaii, "o", color='steelblue')
 plt.title('Second Subplot')
+
+#Top plot
+plt.subplot(2, 1, 1)
+plt.plot(straight_line,x)
+
+#left bottom lplot
+plt.subplot(2,2,3)
+plt.plot(x, parabola)
+
+#right bottom lplot
+plt.subplot(2,2,4)
+plt.plot(x, cubic)
+
+plt.subplots_adjust(wspace=0.35)
+plt.subplots_adjust(bottom=0.2)
+
+plt.show
