@@ -275,3 +275,22 @@ ax.set_yticklabels(['10%', '25%', '50%', '75%'])
 
 
 plt.show()
+
+
+## another graph
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+x = range(12)
+y1 = [0.05, 0.08, 0.18, 0.28, 0.4, 0.66, 0.74, 0.78, 0.8, 0.81, 0.85, 0.85]
+y2 = [0.06, 0.10, 0.12, 0.24, 0.4, 0.5, 0.68, 0.70, 0.75, 0.81, 0.85, 0.85]
+
+plt.plot(x, y1, color='pink', linestyle='--', marker='o')
+plt.title('Two Lines on One Graph')
+plt.plot(x, y2, color='gray', linestyle='-', marker='o')
+plt.xlabel("Amazing X-axis") 
+plt.ylabel("Incredible Y-axis")
+plt.legend(["label1", "label2"], loc=4)
+
+plt.show()
