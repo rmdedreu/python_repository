@@ -659,3 +659,10 @@ plt.legend()
 
 plt.tight_layout()
 plt.show()
+
+## mean and std for every month
+
+for i in range(1, 13):
+  month = london_data.loc[london_data["month"] == i]["TemperatureC"]
+  print("The mean temperature in month "+str(i) +" is "+ str(np.mean(month)))
+  print("The standard deviation of temperature in month "+str(i) +" is "+ str(np.std(month)) +"\n")
