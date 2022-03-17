@@ -676,8 +676,7 @@ for i in range(1, 13):
  
  ## Check p values of multiple colums 
  
- for i in range(1000): # 1000 experiments
+for i in range(1000): # 1000 experiments
    tstatistic, pval = ttest_1samp(daily_prices[i], 1000)
-   
-   #print the pvalue here:
-   print(pval)
+   if pval < 0.05:
+     incorrect_results += 1
