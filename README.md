@@ -802,6 +802,10 @@ plt.show()
 
 # purchase if not null in cell
 
+We want to see if the percent of Group A that purchased an upgrade package is significantly greater than p_clicks_099 (the percent of visitors who need to buy an upgrade package at $0.99 in order to make our target of $1,000).
+
+We are comparing a single set of samples to a target. Our data is still categorical.
+
 import codecademylib
 import pandas as pd
 
@@ -815,3 +819,33 @@ purchase_counts = df.groupby(['group', 'is_purchase'])\
 	.user_id.count().reset_index()
 
 print purchase_counts
+
+#
+
+import codecademylib
+import pandas as pd
+
+df = pd.read_csv('clicks.csv')
+
+df['is_purchase'] = df.click_day.apply(
+  lambda x: 'Purchase' if pd.notnull(x) else 'No Purchase'
+)
+
+purchase_counts = df.groupby(['group', 'is_purchase'])\
+	.user_id.count().reset_index()
+
+print purchase_counts
+
+num_visits = len(df)
+
+p_clicks_099 = (1000 / 0.99) / num_visits
+p_clicks_199 = (1000 / 1.99) / num_visits
+p_clicks_499 = (1000 / 4.99) / num_visits
+
+from scipy.stats import binom_test
+
+pvalueA = binom_test(316, 1666, p_clicks_099)
+pvalueB = binom_test(183, 1666, p_clicks_199)
+pvalueC = binom_test(83, 1666, p_clicks_499)
+
+final_answer = 4.99
