@@ -711,3 +711,18 @@ print pval
 
 pval2 = binom_test(590, n=10000, p=0.06)
 print pval2
+
+# sample size of a survey
+
+import math
+
+margin_of_error = 4
+confidence_level = 95
+likely_proportion = 40
+population_size = 100000
+
+sample_size = 573
+
+//sample_size/120, rounded up:
+//weeks_of_survey = 5
+weeks_of_survey = math.ceil(sample_size/120.0)
