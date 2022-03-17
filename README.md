@@ -673,3 +673,11 @@ for i in range(1, 13):
  A p-value of 0.05 means that if the null hypothesis is true, there is a 5% chance that an observed sample statistic could have occurred due to random sampling error. For example, in comparing two sample means, a p-value of 0.05 indicates there is a 5% chance that the observed difference in sample means occurred by random chance, even though the population means are equal.
  
  Generally, we want a p-value of less than 0.05, meaning that there is less than a 5% chance that our results are due to random chance.
+ 
+ ## Check p values of multiple colums 
+ 
+ for i in range(1000): # 1000 experiments
+   tstatistic, pval = ttest_1samp(daily_prices[i], 1000)
+   
+   #print the pvalue here:
+   print(pval)
