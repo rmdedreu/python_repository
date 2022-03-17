@@ -666,3 +666,8 @@ for i in range(1, 13):
   month = london_data.loc[london_data["month"] == i]["TemperatureC"]
   print("The mean temperature in month "+str(i) +" is "+ str(np.mean(month)))
   print("The standard deviation of temperature in month "+str(i) +" is "+ str(np.std(month)) +"\n")
+  
+  
+ ## basic statistics
+ 
+ A p-value of 0.05 means that if the null hypothesis is true, there is a 5% chance that an observed sample statistic could have occurred due to random sampling error. For example, in comparing two sample means, a p-value of 0.05 indicates there is a 5% chance that the observed difference in sample means occurred by random chance, even though the population means are equal.
